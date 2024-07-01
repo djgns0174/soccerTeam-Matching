@@ -5,31 +5,18 @@ import { Icon, Button } from 'react-native-elements';
 const teamLeague = () => {
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>CLASS</Text>
-        <Icon name="user" type="font-awesome" size={24} />
-      </View>
-
       <View style={styles.menu}>
         <TouchableOpacity style={styles.menuItem}>
-          <Icon name="home" type="font-awesome" size={24} />
-          <Text>홈</Text>
+          <Icon name="team" type="font-awesome" size={24} />
+          <Text>팀</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Icon name="calendar" type="font-awesome" size={24} />
+          <Icon name="reservation" type="font-awesome" size={24} />
           <Text>구장 예약</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Icon name="users" type="font-awesome" size={24} />
-          <Text>팀 모임</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem}>
-          <Icon name="comment" type="font-awesome" size={24} />
-          <Text>응원 메시지</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.menuItem}>
-          <Icon name="plus" type="font-awesome" size={24} />
-          <Text>팀 만들기</Text>
+          <Icon name="comunity" type="font-awesome" size={24} />
+          <Text>커뮤니티</Text>
         </TouchableOpacity>
       </View>
 
@@ -40,10 +27,6 @@ const teamLeague = () => {
       </View>
 
       <View style={styles.dateRow}>
-        <View style={styles.dateItem}>
-          <Text style={styles.dateNumber}>25</Text>
-          <Text style={styles.dateDay}>화</Text>
-        </View>
         <Text style={styles.sport}>축구</Text>
         <Text style={styles.sport}>풋살</Text>
       </View>
@@ -80,21 +63,6 @@ const teamLeague = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
   menu: {
     flexDirection: 'row',
     justifyContent: 'space-around',

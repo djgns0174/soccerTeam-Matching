@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import axios from 'axios';
+import TeamLeauge from './src/screens/team/teamLeague';
+import Bar1 from './src/screens/team/bar1';
+
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -18,6 +21,8 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Text>{message}</Text>
+    <Bar1/>
+    <TeamLeauge />
     </View>
   );
 }
