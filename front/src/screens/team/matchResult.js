@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View, Text, Image, TouchableOpacity, ImageBackground } from 'react-native';
-import { Icon, Button } from 'react-native-elements';
+import { Button } from 'react-native-elements';
 
 const TeamLeague = () => {
   return (
@@ -10,32 +10,7 @@ const TeamLeague = () => {
           <TouchableOpacity><Text style={styles.sport}>축구</Text></TouchableOpacity>
           <TouchableOpacity><Text style={styles.sport}>풋살</Text></TouchableOpacity>
         </View>
-
-        <View style={styles.schedule}>
-          <Text style={styles.matchTime}>17:00 - 19:00</Text>
-          <View style={styles.matchDetails}>
-            <Text style={styles.matchLocation}>종합운동장</Text>
-            <Text style={styles.matchTeams}>미정 VS 소프트웨어학과</Text>
-          </View>
-          <Button title="신청 가능" buttonStyle={styles.applyButton} titleStyle={styles.applyButtonText} />
-        </View>
-
-        <View style={styles.schedule}>
-          <Text style={styles.matchTime}>17:00 - 19:00</Text>
-          <View style={styles.matchDetails}>
-            <Text style={styles.matchLocation}>종합운동장</Text>
-            <Text style={styles.matchTeams}>간호학과 VS 소프트웨어학과</Text>
-          </View>
-          <Button title="신청 가능" buttonStyle={styles.applyButton} titleStyle={styles.applyButtonText} />
-        </View>
       </View>
-      <ImageBackground source={require('../../assets/sonImage.jpg')} style={styles.sonImage}>
-        <View style={styles.footer}>
-          <Text style={styles.footerText1}>원하는 매치가 없다면</Text>
-          <Text style={styles.footerText2}>매치를 만들어 보세요</Text>
-          <Button title="매치 생성" buttonStyle={styles.createMatchButton} titleStyle={styles.createMatchButtonText}/>
-        </View>
-      </ImageBackground>
     </ScrollView>
   );
 };

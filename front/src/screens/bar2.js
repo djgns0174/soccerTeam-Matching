@@ -19,7 +19,7 @@ const Bar2 = () => {
 
 const styles = StyleSheet.create({
   menu: {
-    width: '90%',
+    width: '92%',
     flexDirection: 'row',
     justifyContent: 'flex-start',
     paddingVertical: 10,
