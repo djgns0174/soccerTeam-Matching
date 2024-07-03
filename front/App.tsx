@@ -1,44 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import axios from 'axios';
-import Bar1 from './src/screens/bar1';
+import Bar1 from './src/screens/topBar';
 import Bar2 from './src/screens/bar2';
-import Bar3 from './src/screens/team/bar3';
+import Bar3 from './src/screens/team/league/bar3';
 import MenuBar from './src/screens/team/menuBar';
-import TeamLeague from './src/screens/team/teamLeague';
-import MatchResult from './src/screens/team/matchResult';
-import TeamRanking from './src/screens/team/teamRanking';
+import TeamLeague from './src/screens/team/league/teamLeague';
+import MatchResult from './src/screens/team/league/matchResult';
+import TeamRanking from './src/screens/team/league/teamRanking';
 
 const App = () => {
-  const [message, setMessage] = useState('');
-  const [selectedComponent, setSelectedComponent] = useState('teamLeague');
+  const [bar2Component, setBar2Component] = useState('team');
+  const [bar3Component, setBar3Component] = useState('teamLeague');
+  const [menuBarComponent, setMenuBarComponent] = useState('league');
+  const [sportsComponent, setSportsComponent] = useState('soccer');
+
 
   const renderComponent = () => {
-    if (selectedComponent === 'teamLeague') {
-      return <TeamLeague />;
-    } else if (selectedComponent === 'matchResult') {
-      return <MatchResult />;
-    } else if (selectedComponent === 'teamRanking') {
-      return <TeamRanking />;
+    if (menuBarComponent === 'league') {
+      return (
+        <>
+          <Bar3 setSelectedComponent={setBar3Component} selectedComponent={bar3Component} />
+          {bar3Component === 'teamLeague' && (
+            <TeamLeague setSelectedComponent={setSportsComponent} selectedComponent={sportsComponent} />
+          )}
+          {bar3Component === 'matchResult' && (
+            <MatchResult setSelectedComponent={setSportsComponent} selectedComponent={sportsComponent} />
+          )}
+          {bar3Component === 'teamRanking' && (
+            <TeamRanking setSelectedComponent={setSportsComponent} selectedComponent={sportsComponent} />
+          )}
+        </>
+      );
+    } else if(menuBarComponent === 'teamOneSearch'){
+
+    } else if(menuBarComponent === 'personSearch'){
+
+    } else if(menuBarComponent === 'teamCreate'){
+      
     }
   };
-
-  useEffect(() => {
-    axios.get('http://10.0.2.2:8080/api/hello') // 에뮬레이터의 경우 localhost를 10.0.2.2로 변경
-      .then(response => {
-        setMessage(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
 
   return (
     <View style={styles.container}>
       <Bar1 />
-      <Bar2 />
-      <MenuBar />
-      <Bar3 setSelectedComponent={setSelectedComponent} selectedComponent={selectedComponent} />
+      <MenuBar setSelectedComponent={setMenuBarComponent} selectedComponent={menuBarComponent} />
+
       {renderComponent()}
     </View>
   );

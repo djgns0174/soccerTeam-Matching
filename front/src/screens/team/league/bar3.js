@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 const Bar3 = ({ selectedComponent, setSelectedComponent }) => {
-  console.log(selectedComponent);
   return (
     <View style={styles.scheduleHeader}>
       <TouchableOpacity onPress={() => setSelectedComponent('teamLeague')}>

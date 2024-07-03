@@ -1,17 +1,26 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
-const Bar2 = () => {
+const Bar2 = ({ selectedComponent, setSelectedComponent }) => {
   return (
     <View style={styles.menu}>
-      <TouchableOpacity style={styles.menuItem}>
-        <Text style={styles.team}>팀</Text>
+      <TouchableOpacity onPress={() => setSelectedComponent('team')} style={styles.menuItem}>
+        <Text style={[
+          styles.team,
+          selectedComponent === 'team' ? styles.selectedText : null
+        ]}>팀</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem}>
-        <Text style={styles.reservation}>구장 예약</Text>
+      <TouchableOpacity onPress={() => setSelectedComponent('reservation')} style={styles.menuItem}>
+        <Text style={[
+          styles.reservation,
+          selectedComponent === 'reservation' ? styles.selectedText : null
+        ]}>구장 예약</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.menuItem}>
-        <Text style={styles.community}>커뮤니티</Text>
+      <TouchableOpacity onPress={() => setSelectedComponent('community')} style={styles.menuItem}>
+        <Text style={[
+          styles.community,
+          selectedComponent === 'community' ? styles.selectedText:null
+          ]}>커뮤니티</Text>
       </TouchableOpacity>
     </View>
   );
@@ -26,6 +35,10 @@ const styles = StyleSheet.create({
   },
   menuItem: {
     marginRight: 15,
+  },
+  selectedText: {
+    color: 'black',
+    fontWeight: 'bold',
   },
 });
 
