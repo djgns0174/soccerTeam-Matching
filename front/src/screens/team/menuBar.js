@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   image: {
+    marginTop:5,
     width: 30,
     height: 30,
     justifyContent: 'center',

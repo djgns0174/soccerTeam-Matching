@@ -8,6 +8,8 @@ import MenuBar from './src/screens/team/menuBar';
 import TeamLeague from './src/screens/team/league/teamLeague';
 import MatchResult from './src/screens/team/league/matchResult';
 import TeamRanking from './src/screens/team/league/teamRanking';
+import TeamOneSearch from './src/screens/team/teamOneSearch/teamOneSearch';
+import PersonSearch from './src/screens/team/personSearch/personSearch';
 
 const App = () => {
   const [bar2Component, setBar2Component] = useState('team');
@@ -33,9 +35,13 @@ const App = () => {
         </>
       );
     } else if(menuBarComponent === 'teamOneSearch'){
-
+      return(
+        <TeamOneSearch selectedComponent={sportsComponent} setSelectedComponent={setSportsComponent}/>
+      );
     } else if(menuBarComponent === 'personSearch'){
-
+      return(
+        <PersonSearch selectedComponent={sportsComponent} setSelectedComponent={setSportsComponent}/>
+      );
     } else if(menuBarComponent === 'teamCreate'){
       
     }
@@ -45,7 +51,6 @@ const App = () => {
     <View style={styles.container}>
       <Bar1 />
       <MenuBar setSelectedComponent={setMenuBarComponent} selectedComponent={menuBarComponent} />
-
       {renderComponent()}
     </View>
   );
@@ -53,8 +58,6 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
 });

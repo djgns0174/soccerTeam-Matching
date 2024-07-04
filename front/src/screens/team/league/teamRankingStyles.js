@@ -5,93 +5,92 @@ const styles = StyleSheet.create({
       width:'100%',
     },
     container: {
-      width:'85%',
+      width:'80%',
       flex:1,
       alignSelf:'center'
+    },
+    rankingSystemContainer: {
+      flexDirection:'row',
+      width:'60%',
+      backgroundColor: '#f2ebeb',
+      borderRadius: 5,
+      alignSelf: 'center',
+      height: 25,
+      marginTop:5,
+    },
+    notifiIcon: {
+      marginTop:5,
+      width: 16,
+      height: 16,
+      marginLeft: 10,
+    },
+    notifiText1:{
+      marginLeft: 8,
+      marginTop: 3,
+      fontSize:12,
+    },    
+    notifiText2:{
+      color:"black",
+      marginLeft: 8,
+      marginTop: 3,
+      fontSize:12,
     },
     sportsRow: {
       flexDirection: 'row',
       paddingVertical: 10,
       justifyContent:'flex-start',
+      marginLeft:20,
     },
     sport: {
       fontSize: 12,
       marginRight:15,
     },
-    schedule: {
-      flexDirection: 'row',
-      justifyContent: 'center' ,
-      alignItems: 'center', 
-      padding: 15,
-      borderBottomWidth: 0.8,
-      borderBottomColor: '#ccc',
-    },
-    matchTime: {
-      color:'black',
-      fontSize: 15,
-      fontWeight: 'bold',
-      marginRight:15
-    },
-    matchDetails: {
-      flexDirection: 'column',
-      flex: 1,
-      alignItems: 'stretch',
-      marginRight:15
-    },
-    matchLocation: {
-      fontSize: 12,
-      color: 'black',
-    },
-    matchTeams: {
-      fontSize: 11,
-      marginVertical: 5,
-    },
-    applyButton: {
-      backgroundColor: '#007bff',
-      borderRadius: 5,
-      paddingBottom: 5,
-      paddingTop: 2.5,
-    },
-    applyButtonText: {
-      color:'white',
-      fontSize:10,
-    },
-    sonImage: {
-      width: '100%',
-      height: 250,
-      resizeMode: 'cover',
-    },
-    footer: {
-      position: 'absolute',
-      bottom: 10,
-      left: 10,
-    },
-    footerText1: {
-      fontSize: 10,
-      color:'black',
-      marginLeft:12,
-    },
-    footerText2: {
-      fontSize: 12,
-      color:'black',
-      marginLeft:12,
-    },
-    createMatchButton: {
-      height:20,
-      marginLeft:12,
-      marginTop:5,
-      paddingBottom: 2.5,
-      paddingTop: 0,
-      backgroundColor: '#28a745',
-      borderRadius: 130,
-    },
-    createMatchButtonText:{
-      fontSize:10,
-      color:'white',
-    },
     selectedText: {
       color: 'black',
       fontWeight: 'bold',
+    },
+    rankInfoTextContainer:{
+      marginLeft:90,
+      flexDirection:'row',
+    },
+    rankInfoText :{
+      fontSize:10,
+      marginRight:10,
+      marginTop:2,
+    },
+    rankContainerRow: {
+      marginLeft:25,
+      width:'80%',
+      flexDirection: 'col',
+    },
+    rankContainerCol: {
+      width:'100%',
+      flexDirection: 'row',
+      alignItems: 'center', 
+      borderBottomWidth: 0.8,
+      borderBottomColor: '#ccc',
+      paddingTop:7,
+      paddingBottom:10,
+    },
+    rankIcon:{
+      marginTop:3,
+      width: 20,
+      height: 20,
+      marginRight: 15,
+    },
+    rankTeamText: {
+      color:'black',
+      fontSize: 13,
+      fontWeight: 'bold',
+    },
+    rankInfoDataContainer:{
+      marginLeft:40,
+      flexDirection:'row',
+    },
+    rankInfoData:{
+      fontSize:10,
+      marginRight:10,
+      marginTop:2,
     },
   });
   
