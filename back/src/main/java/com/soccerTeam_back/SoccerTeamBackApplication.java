@@ -1,4 +1,4 @@
-package com.example.soccerTeam_back;
+package com.soccerTeam_back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

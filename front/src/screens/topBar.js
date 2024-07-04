@@ -1,14 +1,20 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Touchable, TouchableOpacity, ImageBackground } from 'react-native';
 
-const Bar1 = () => {
+const Bar1 = ({selectedComponent, setSelectedComponent}) => {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>CLASS</Text>
-      <Image 
-        source={require('../assets/myPageIcon.png')} 
-        style={styles.mypageIcon} 
-      />
+      <TouchableOpacity onPress={()=>setSelectedComponent('home')}>
+        <Text style={styles.title}>CLASS</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={()=>setSelectedComponent('myPage')}>
+        <Image
+          source={require('../assets/myPageIcon.png')} 
+          style={styles.mypageIcon} 
+          
+        />
+      </TouchableOpacity>
     </View>
   );
 };

@@ -1,5 +1,5 @@
 // src/main/java/com/example/demo/HelloController.java
-package com.example.soccerTeam_back;
+package com.soccerTeam_back;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
