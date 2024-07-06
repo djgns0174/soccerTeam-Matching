@@ -1,17 +1,29 @@
-// MyPage.js
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import styles from './myPageStyles';
-import { Button } from 'react-native-elements';
+import  * as KakaoLogin from '@react-native-seoul/kakao-login';
 
 const MyPage = ({ selectedComponent, setSelectedComponent }) => {
   return (
     <View style={styles.container}>
-      <Button title="KAKAO LOGIN" buttonStyle={styles.kakaoLoginButton} />
-      <Text>asdfasdf</Text>
-      <Button title="신청 가능" buttonStyle={styles.applyButton} titleStyle={styles.applyButtonText} />
+      <TouchableOpacity style={styles.kakaoLoginButton} onPress={()=>login()}>
+        <Text style={styles.buttonText}>KAKAO LOGIN</Text>
+      </TouchableOpacity>
     </View>
   );
+};
+
+const login = () => {
+  KakaoLogin.login().then((result) => {
+      console.log("Login Success", JSON.stringify(result));
+      getProfile();
+  }).catch((error) => {
+      if (error.code === 'E_CANCELLED_OPERATION') {
+          console.log("Login Cancel", error.message);
+      } else {
+          console.log(`Login Fail(code:${error.code})`, error.message);
+      }
+  });
 };
 
 export default MyPage;
